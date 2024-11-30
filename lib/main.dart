@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_nft_marketplace/features/onBoarding/on_boarding_page.dart';
+import 'package:mini_nft_marketplace/features/onBoarding/screens/on_boarding_page.dart';
 
 import 'core/resourses/route_managers.dart';
 
@@ -16,10 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: RouteManagers.routes,
       initialRoute: RouteName.KOnBoardingPage,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeData.dark(),
     );
   }
 }

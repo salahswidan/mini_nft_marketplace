@@ -5,6 +5,9 @@ import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_nft_marketplace/core/resourses/strings_managers.dart';
 import 'dart:ui' show ImageFilter;
 
+import '../widget/custom_bg_image_widget.dart';
+import '../widget/custom_card.dart';
+
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
 
@@ -12,11 +15,7 @@ class OnBoardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        Image(
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-            image: AssetImage(ImageManagers.OnBoardingBackGroundImage)),
+        CustomBgImageWidget(),
         SizedBox(
           width: double.infinity,
           child: Column(
@@ -33,19 +32,7 @@ class OnBoardingPage extends StatelessWidget {
                     fontFamily: FontManagers.KMain),
               ),
               Spacer(),
-              ClipRRect(
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                  child: Container(
-                    width: 306,
-                    height: 191,
-                    color: ColorManagers.kPrimaryWhite.withOpacity(0.1),
-                  ),
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(20),
-                ),
-              ),
+              CustomCard(),
               SizedBox(
                 height: 72,
               ),
