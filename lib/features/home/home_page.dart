@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 
 import '../../core/resourses/color_managers.dart';
+import 'widget/custom_category_home_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,7 +27,27 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset("assets/images/image(1).png")],
+          Container(
+            height: 300,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                custom_category_home_page(
+                  title: "Art",
+                  image: "assets/images/image(1).png",
+                ),
+                custom_category_home_page(
+                  title: "Art",
+                  image: "assets/images/image(1).png",
+                ),
+                custom_category_home_page(
+                  title: "Art",
+                  image: "assets/images/image(1).png",
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
