@@ -54,7 +54,7 @@ class CustomCard extends StatelessWidget {
                   filter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RouteName.KHomePage);
+                      Navigator.pushReplacementNamed(context, RouteName.KHomePage);
                     },
                     child: Text("Get Started Now"),
                   ),
