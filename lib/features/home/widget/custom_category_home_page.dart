@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../core/resourses/font_managers.dart';
 
-class custom_category_home_page extends StatelessWidget {
-  custom_category_home_page({
+class customCategoryHomePage extends StatelessWidget {
+  customCategoryHomePage({
     
     super.key,
     required this.title,

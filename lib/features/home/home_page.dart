@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mini_nft_marketplace/core/resourses/constants.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 
 import '../../core/resourses/color_managers.dart';
@@ -27,24 +28,17 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            height: 300,
-            child: ListView(
+          SizedBox(
+            height: 167,
+            child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              children: [
-                custom_category_home_page(
-                  title: "Art",
-                  image: "assets/images/image(1).png",
-                ),
-                custom_category_home_page(
-                  title: "Art",
-                  image: "assets/images/image(1).png",
-                ),
-                custom_category_home_page(
-                  title: "Art",
-                  image: "assets/images/image(1).png",
-                ),
-              ],
+              itemCount: 3,
+              separatorBuilder: (context, index) => SizedBox(
+                width: 10,
+              ),
+              itemBuilder: (context, index) => customCategoryHomePage(
+                  title: Constants.categoryList[index].title,
+                  image: Constants.categoryList[index].image),
             ),
           ),
         ],
