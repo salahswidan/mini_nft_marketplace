@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/resourses/color_managers.dart';
 import '../../../core/resourses/font_managers.dart';
+import '../../../core/resourses/route_managers.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard({
@@ -52,7 +53,9 @@ class CustomCard extends StatelessWidget {
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, RouteName.KHomePage);
+                    },
                     child: Text("Get Started Now"),
                   ),
                 ),
