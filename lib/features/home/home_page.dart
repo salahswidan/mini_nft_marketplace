@@ -50,16 +50,13 @@ class HomePage extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => CustomCardCollection(
-                  collectionModel: CollectionsModel(
-                      title: "3D cart",
-                      image: "assets/images/trending1.png",
-                      countLike: "240",
-                      isActiveLike: false),
+                  collectionModel: Constants.collectionList[index],
+                 
                 ),
                 separatorBuilder: (context, index) => SizedBox(
                   width: 3,
                 ),
-                itemCount: 7,
+                itemCount: 3,
               ),
             )
           ],
