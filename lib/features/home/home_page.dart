@@ -44,10 +44,20 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 7,
             ),
-            CustomCardCollection()
+            SizedBox(
+              height: 197,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => CustomCardCollection(),
+                separatorBuilder: (context, index) => SizedBox(
+                  width: 3,
+                ),
+                itemCount: 7,
+              ),
+            )
           ],
         ),
       ),
     );
   }
-} 
+}
