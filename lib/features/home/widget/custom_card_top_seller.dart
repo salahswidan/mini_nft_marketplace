@@ -2,12 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_nft_marketplace/model/collections_model.dart';
 
 import '../../../core/resourses/color_managers.dart';
 
-class CustomCardCollection extends StatelessWidget {
-  const CustomCardCollection({
+class CustomCardTopSeller extends StatelessWidget {
+  const CustomCardTopSeller({
     super.key,
     required this.collectionModel,
   });
@@ -24,13 +25,15 @@ class CustomCardCollection extends StatelessWidget {
           child: Container(
             alignment: Alignment.center,
             padding: const EdgeInsets.all(10),
-            width: 157,
-            height: 195,
+            width: 180,
+            height: 243,
             color: ColorManagers.kPrimaryWhite.withOpacity(0.1),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image(
                   height: 139,
+                  width: 230,
                   image: AssetImage(
                     collectionModel.image,
                   ),
@@ -38,11 +41,36 @@ class CustomCardCollection extends StatelessWidget {
                 SizedBox(
                   height: 9,
                 ),
+                Text(
+                  "Abstract Art",
+                  style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: ColorManagers.kPrimaryWhite,
+                      fontFamily: FontManagers.KMain),
+                ),
+                Text(
+                  "abstract #25215",
+                  style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                      fontFamily: FontManagers.KMain),
+                ),
+                SizedBox(
+                  height: 9,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Icon(
+                      CupertinoIcons.gift_fill,
+                    ),
                     Text(
                       collectionModel.title,
+                    ),
+                    SizedBox(
+                      height: 9,
                     ),
                     Row(
                       children: [
