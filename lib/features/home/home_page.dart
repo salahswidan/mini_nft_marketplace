@@ -6,6 +6,8 @@ import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 
 import '../../core/resourses/color_managers.dart';
 import 'widget/custom_category_home_page.dart';
+import 'widget/custom_list_view_top.dart';
+import 'widget/custom_sub_title.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -28,18 +30,22 @@ class HomePage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          customListViewTop(),
           SizedBox(
-            height: 167,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: 3,
-              separatorBuilder: (context, index) => SizedBox(
-                width: 10,
-              ),
-              itemBuilder: (context, index) => customCategoryHomePage(
-                  title: Constants.categoryList[index].title,
-                  image: Constants.categoryList[index].image),
-            ),
+            height: 27,
+          ),
+          customSubTitle(
+            title: "Treaning Collections",
+          ),
+          SizedBox(
+            height: 7,
+          ),
+          customListViewTop(),
+          SizedBox(
+            height: 27,
+          ),
+          customSubTitle(
+            title: "Treaning Collections",
           ),
         ],
       ),
