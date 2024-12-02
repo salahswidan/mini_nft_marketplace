@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resourses/constants.dart';
@@ -51,7 +50,7 @@ class HomePage extends StatelessWidget {
                   collectionModel: Constants.collectionList[index],
                 ),
                 separatorBuilder: (context, index) => SizedBox(
-                  width: 3,
+                  width: 28,
                 ),
                 itemCount: 3,
               ),
@@ -70,10 +69,10 @@ class HomePage extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => CustomCardTopSeller(
-                  collectionModel: Constants.collectionList[index],
+                  topSellerModel: Constants.topSellerList[index],
                 ),
                 separatorBuilder: (context, index) => SizedBox(
-                  width: 3,
+                  width: 28,
                 ),
                 itemCount: 3,
               ),

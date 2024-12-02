@@ -4,15 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_nft_marketplace/model/collections_model.dart';
+import 'package:mini_nft_marketplace/model/top_seller_model.dart';
 
 import '../../../core/resourses/color_managers.dart';
 
 class CustomCardTopSeller extends StatelessWidget {
   const CustomCardTopSeller({
     super.key,
-    required this.collectionModel,
+    required this.topSellerModel,
   });
-  final CollectionsModel collectionModel;
+  final TopSellerModel topSellerModel;
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +36,14 @@ class CustomCardTopSeller extends StatelessWidget {
                   height: 139,
                   width: 230,
                   image: AssetImage(
-                    collectionModel.image,
+                    topSellerModel.image,
                   ),
                 ),
                 SizedBox(
                   height: 9,
                 ),
                 Text(
-                  "Abstract Art",
+                  topSellerModel.title,
                   style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
@@ -50,7 +51,7 @@ class CustomCardTopSeller extends StatelessWidget {
                       fontFamily: FontManagers.KMain),
                 ),
                 Text(
-                  "abstract #25215",
+                  topSellerModel.subTitle,
                   style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
@@ -67,14 +68,14 @@ class CustomCardTopSeller extends StatelessWidget {
                       CupertinoIcons.gift_fill,
                     ),
                     Text(
-                      collectionModel.title,
+                      topSellerModel.num1,
                     ),
                     SizedBox(
                       height: 9,
                     ),
                     Row(
                       children: [
-                        collectionModel.isActiveLike
+                        topSellerModel.isActiveLike
                             ? Icon(
                                 CupertinoIcons.heart_fill,
                                 color: Colors.red,
@@ -83,7 +84,7 @@ class CustomCardTopSeller extends StatelessWidget {
                                 CupertinoIcons.heart,
                                 color: Colors.grey[350],
                               ),
-                        Text(collectionModel.countLike),
+                        Text(topSellerModel.countLike),
                       ],
                     )
                   ],
