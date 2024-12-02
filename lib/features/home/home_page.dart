@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resourses/constants.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
+import 'package:mini_nft_marketplace/model/collections_model.dart';
 
 import '../../core/resourses/color_managers.dart';
 import '../../core/resourses/route_managers.dart';
@@ -48,7 +49,13 @@ class HomePage extends StatelessWidget {
               height: 197,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => CustomCardCollection(),
+                itemBuilder: (context, index) => CustomCardCollection(
+                  collectionModel: CollectionsModel(
+                      title: "3D cart",
+                      image: "assets/images/trending1.png",
+                      countLike: "240",
+                      isActiveLike: false),
+                ),
                 separatorBuilder: (context, index) => SizedBox(
                   width: 3,
                 ),
