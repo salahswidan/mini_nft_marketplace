@@ -27,16 +27,20 @@ class CustomCardTopSeller extends StatelessWidget {
             alignment: Alignment.center,
             padding: const EdgeInsets.all(10),
             width: 180,
-            height: 243,
+            height: 243, 
             color: ColorManagers.kPrimaryWhite.withOpacity(0.1),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image(
-                  height: 139,
-                  width: 230,
-                  image: AssetImage(
-                    topSellerModel.image,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(19),
+                  child: Image(
+                    fit: BoxFit.cover,
+                    height: 139,
+                    width: 230,
+                    image: AssetImage(
+                      topSellerModel.image,
+                    ),
                   ),
                 ),
                 SizedBox(
