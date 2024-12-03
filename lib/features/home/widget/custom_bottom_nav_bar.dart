@@ -1,8 +1,8 @@
-
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_nft_marketplace/core/resourses/route_managers.dart';
 
 import '../../../core/resourses/color_managers.dart';
 
@@ -36,10 +36,15 @@ class customBottomNavBar extends StatelessWidget {
                       color: ColorManagers.kPrimaryWhite,
                       size: 39,
                     ),
-                    Icon(
-                      Icons.stacked_bar_chart_rounded,
-                      color: ColorManagers.kPrimaryWhite,
-                      size: 39,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, RouteName.KStatePage);
+                      },
+                      child: Icon(
+                        Icons.stacked_bar_chart_rounded,
+                        color: ColorManagers.kPrimaryWhite,
+                        size: 39,
+                      ),
                     ),
                     Container(
                       width: 39,
