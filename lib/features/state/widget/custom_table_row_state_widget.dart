@@ -2,22 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/resourses/font_managers.dart';
+import '../../../model/table_row_model.dart';
 
 class CustomTableRowStateWidget extends StatelessWidget {
   const CustomTableRowStateWidget(
       {super.key,
-      required this.title,
-      required this.percent,
-      required this.image,
-      required this.name,
-      required this.subName,
-      required this.count1});
-  final String title;
-  final String image;
-  final String name;
-  final String subName;
-  final String count1;
-  final String percent;
+     required this.tableRowModel});
+  final TableRowModel tableRowModel;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +18,14 @@ class CustomTableRowStateWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(title),
+            Text(tableRowModel.title),
             SizedBox(
               width: 10,
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(13),
               child: Image.asset(
-                image,
+                tableRowModel.image,
                 height: 39,
                 width: 39,
                 fit: BoxFit.cover,
@@ -50,7 +41,7 @@ class CustomTableRowStateWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    tableRowModel.name,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: FontManagers.KMain,
@@ -58,7 +49,7 @@ class CustomTableRowStateWidget extends StatelessWidget {
                         fontSize: 12),
                   ),
                   Text(
-                    subName,
+                    tableRowModel.subName,
                     style:
                         TextStyle(fontFamily: FontManagers.KMain, fontSize: 11),
                   ),
@@ -78,7 +69,7 @@ class CustomTableRowStateWidget extends StatelessWidget {
                       size: 15,
                     ),
                     Text(
-                      count1,
+                      tableRowModel.count1,
                       style: TextStyle(
                           fontSize: 13,
                           color: Colors.white,
@@ -87,7 +78,7 @@ class CustomTableRowStateWidget extends StatelessWidget {
                   ]),
                 ),
                 Text(
-                  percent,
+                  tableRowModel.percent,
                   style: TextStyle(
                       fontSize: 12,
                       color: Colors.green,
