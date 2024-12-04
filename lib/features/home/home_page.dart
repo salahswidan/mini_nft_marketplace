@@ -6,6 +6,7 @@ import 'package:mini_nft_marketplace/core/resourses/constants.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 
 import '../../core/resourses/color_managers.dart';
+import '../../core/resourses/route_managers.dart';
 import 'widget/custom_bottom_nav_bar.dart';
 import 'widget/custom_card_collection.dart';
 import 'widget/custom_card_top_seller.dart';
@@ -20,13 +21,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: customBottomNavBar(),
+      bottomNavigationBar: customBottomNavBar(
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: Text(

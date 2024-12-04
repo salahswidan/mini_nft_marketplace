@@ -10,6 +10,7 @@ class customBottomNavBar extends StatelessWidget {
   const customBottomNavBar({
     super.key,
   });
+  // final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +32,21 @@ class customBottomNavBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Icon(
-                      Icons.home,
-                      color: ColorManagers.kPrimaryWhite,
-                      size: 39,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacementNamed(
+                            context, RouteName.KHomePage);
+                      },
+                      child: Icon(
+                        Icons.home,
+                        color: ColorManagers.kPrimaryWhite,
+                        size: 39,
+                      ),
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, RouteName.KStatePage);
+                        Navigator.pushReplacementNamed(
+                            context, RouteName.KStatePage);
                       },
                       child: Icon(
                         Icons.stacked_bar_chart_rounded,
