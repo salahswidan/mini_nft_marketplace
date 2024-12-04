@@ -4,10 +4,24 @@ import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 
 import '../../home/widget/custom_bottom_nav_bar.dart';
 import '../../home/widget/custom_sub_title.dart';
+import '../widget/custom_category_state_page.dart';
 import '../widget/custom_sub_title.dart';
 
-class StatePage extends StatelessWidget {
+class StatePage extends StatefulWidget {
   const StatePage({super.key});
+
+  @override
+  State<StatePage> createState() => _StatePageState();
+}
+
+class _StatePageState extends State<StatePage> {
+  int activeTabIndex = 0;
+
+  void setActiveTab(int index) {
+    setState(() {
+      activeTabIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +42,10 @@ class StatePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            //  padding: const EdgeInsets.only(bottom: 16.0),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               border: Border(
-                  bottom: BorderSide(color: Color(0xff97A9F6), width: 0.2)),
+                bottom: BorderSide(color: Color(0xff97A9F6), width: 0.2),
+              ),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -39,15 +53,33 @@ class StatePage extends StatelessWidget {
                 CustomSubTitle(
                   title: "Ranking",
                   iconz: Icons.leaderboard_outlined,
-                  isActive: true,
+                  isActive: activeTabIndex == 0,
+                  onTap: () => setActiveTab(0),
                 ),
                 CustomSubTitle(
                   title: "Activity",
                   iconz: Icons.sports_gymnastics_outlined,
-                  isActive: false,
+                  isActive: activeTabIndex == 1,
+                  onTap: () => setActiveTab(1),
                 ),
               ],
             ),
+          ),
+          SizedBox(
+            height: 27,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CustomCategoryStatesPage(
+                title: "All Categories",
+                icon: Icons.reorder,
+              ),
+              CustomCategoryStatesPage(
+                title: "All Chains",
+                icon: Icons.link,
+              ),
+            ],
           ),
         ],
       ),
