@@ -3,6 +3,8 @@ import 'package:mini_nft_marketplace/core/resourses/color_managers.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
 
 import '../../home/widget/custom_bottom_nav_bar.dart';
+import '../../home/widget/custom_sub_title.dart';
+import '../widget/custom_sub_title.dart';
 
 class StatePage extends StatelessWidget {
   const StatePage({super.key});
@@ -29,64 +31,20 @@ class StatePage extends StatelessWidget {
             //  padding: const EdgeInsets.only(bottom: 16.0),
             decoration: BoxDecoration(
               border: Border(
-                  bottom: BorderSide(color: Color(0xff97A9F6), width: 0.7)),
+                  bottom: BorderSide(color: Color(0xff97A9F6), width: 0.2)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  //  padding: EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Icon(
-                            Icons.stacked_bar_chart,
-                            color: Colors.grey,
-                          ),
-                          Text(
-                            "Ranking",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: FontManagers.KMain,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        decoration:
-                            BoxDecoration(color: Color(0xff976dff), boxShadow: [
-                          BoxShadow(
-                              color: Color(0xff976dff),
-                              blurRadius: 16,
-                              offset: Offset(0, -5),
-                              spreadRadius: 1.5),
-                        ]),
-                        width: 106,
-                        height: 3.6,
-                      )
-                    ],
-                  ),
+                CustomSubTitle(
+                  title: "Ranking",
+                  iconz: Icons.leaderboard_outlined,
+                  isActive: true,
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.sports_gymnastics_outlined,
-                      color: Colors.grey,
-                    ),
-                    Text(
-                      "Activity",
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: FontManagers.KMain,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                CustomSubTitle(
+                  title: "Activity",
+                  iconz: Icons.sports_gymnastics_outlined,
+                  isActive: false,
                 ),
               ],
             ),
