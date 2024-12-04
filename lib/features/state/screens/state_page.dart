@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resourses/color_managers.dart';
@@ -7,6 +9,7 @@ import '../../home/widget/custom_bottom_nav_bar.dart';
 import '../../home/widget/custom_sub_title.dart';
 import '../widget/custom_category_state_page.dart';
 import '../widget/custom_sub_title.dart';
+import '../widget/custom_table_row_state_widget.dart';
 
 class StatePage extends StatefulWidget {
   const StatePage({super.key});
@@ -82,72 +85,35 @@ class _StatePageState extends State<StatePage> {
               ),
             ],
           ),
-          Row(
-            children: [
-              Text("1"),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(13),
-                child: Image.asset(
-                  "assets/images/image(1).png",
-                  height: 39,
-                  width: 39,
-                  fit: BoxFit.cover,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 9.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  height: 400,
+                  alignment: Alignment.center,
+                  // padding: EdgeInsets.all(25),
+                  child: ListView.separated(
+                    itemBuilder: (context, index) => CustomTableRowStateWidget(
+                      title: "1",
+                      image: "assets/images/image(1).png",
+                      name: "Azumi",
+                      subName: "view info",
+                      count1: "200055.02",
+                      percent: "3.99%",
+                    ),
+                    separatorBuilder: (context, index) => SizedBox(
+                      height: 9,
+                    ),
+                    itemCount: 10,
+                  ),
+                  color: ColorManagers.kPrimaryWhite.withOpacity(0.1),
                 ),
               ),
-              Container(
-                height: 39,
-                width: 115,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Azumi",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: FontManagers.KMain,
-                          color: Colors.white,
-                          fontSize: 12),
-                    ),
-                    Text(
-                      "view info",
-                      style: TextStyle(
-                          fontFamily: FontManagers.KMain, fontSize: 11),
-                    ),
-                  ],
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(
-                            CupertinoIcons.link,
-                            size: 15,
-                          ),
-                          Text(
-                            "200055.02",
-                            style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ]),
-                  ),
-                  Text(
-                    "3.99%",
-                    style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.green,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+          )
         ],
       ),
     );
