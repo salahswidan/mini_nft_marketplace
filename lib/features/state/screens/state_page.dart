@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resourses/color_managers.dart';
 import 'package:mini_nft_marketplace/core/resourses/font_managers.dart';
@@ -78,6 +79,72 @@ class _StatePageState extends State<StatePage> {
               CustomCategoryStatesPage(
                 title: "All Chains",
                 icon: Icons.link,
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Text("1"),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(13),
+                child: Image.asset(
+                  "assets/images/image(1).png",
+                  height: 39,
+                  width: 39,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                height: 39,
+                width: 115,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Azumi",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: FontManagers.KMain,
+                          color: Colors.white,
+                          fontSize: 12),
+                    ),
+                    Text(
+                      "view info",
+                      style: TextStyle(
+                          fontFamily: FontManagers.KMain, fontSize: 11),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(
+                            CupertinoIcons.link,
+                            size: 15,
+                          ),
+                          Text(
+                            "200055.02",
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ]),
+                  ),
+                  Text(
+                    "3.99%",
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.green,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
             ],
           ),

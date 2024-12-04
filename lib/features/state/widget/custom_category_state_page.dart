@@ -40,8 +40,8 @@ class CustomCategoryStatesPage extends StatelessWidget {
           ],
         ),
       ),
-      height: 39,
-      width: 147,
+      // height: 39,
+      // width: 147,
       decoration: BoxDecoration(
         color: Color(0xff976dff).withOpacity(.12),
         border: Border.all(color: Color(0xff976dff)),
